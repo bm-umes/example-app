@@ -18,7 +18,7 @@
         <label for="nombre">Nombre:</label> <input type="text" id="nombre" name="nombre" value="{{old('nombre')}}"><br/>
         <label for="email">E-mail:</label> <input type="text" id="email" name="email" value="{{old('email')}}"><br/>
         <input type="checkbox" id="publicidad" name="publicidad" value="some" @checked(old('publicidad'))><label for="publicidad">Recibir Publicidad</label><br/>
-        <label for="mensaje">Mensaje:</label> <br/>
+        <label for="mensaje">Mensaje Largo:</label> <br/>
         <textarea id="mensaje" name="mensaje">{{old('mensaje')}}</textarea><br/>
 
 
