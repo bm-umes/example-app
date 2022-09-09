@@ -1,7 +1,7 @@
 <html>
     <body>
 
-<h1> Formulario de contacto </h1>
+<h1> Formulario de contacto VIP </h1>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
