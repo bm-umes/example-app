@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactoRecibido;
+use App\Models\Contact;
 
 class ContactoController extends BaseController
 {
@@ -21,9 +22,13 @@ class ContactoController extends BaseController
             'mensaje' => 'required',
         ]);
         
-        //enviar mensaje
-        
-        
+
+        //inserta a base de datos
+        $input = $request->input(); //se puede usar only para cierto keys.
+        $input['publicidad'] = isset($input['publicidad']) && $input['publicidad'] == 'on';
+        Contact::create($input);
+
+        //enviar correo a posible cliente
         Mail::send(new ContactoRecibido($request->input()));
 
 
