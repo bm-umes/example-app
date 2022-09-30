@@ -25,7 +25,7 @@ class ContactoController extends BaseController
 
         //inserta a base de datos
         $input = $request->input(); //se puede usar only para cierto keys.
-        $input['publicidad'] = isset($input['publicidad']) && $input['publicidad'] == 'on';
+        $input['publicidad'] = isset($input['publicidad']);
         Contact::create($input);
 
         //enviar correo a posible cliente
