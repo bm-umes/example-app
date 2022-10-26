@@ -62,3 +62,16 @@ Route::get('/ejemplo-relaciones', function(){
 
     echo '</pre>';
 });
+
+
+
+Route::get('/ejemplo-api', function(){
+    // Route llama a un controller que llama a un modelo
+    // luego el controller con la data llama a un view.
+    $servidor = 'http://midominio.localhost/api/';
+    $client = new GuzzleHttp\Client(['base_uri' => $servidor]);
+    $response = $client->request('GET', 'marcas/1');
+    $contents = $response->getBody()->getContents();
+    $as_array = json_decode($contents);
+    return $as_array;
+});
